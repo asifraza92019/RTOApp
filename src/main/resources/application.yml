@@ -1,0 +1,64 @@
+server:
+  port: 9090
+  
+    
+
+spring:
+  mvc:
+    view:
+      prefix: /views/ 
+      suffix: .jsp
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: asifraza4101995@gmail.com
+    password: asifraza@786
+    properties:
+      mail:
+       smtp:
+        auth: true
+        starttls:
+         enable: true
+   
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mydb
+    username: root
+    password: root
+ 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      dialect: org.hibernate.dialect.MySQL55Dialect
+    
+      
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+  endpoint:
+    env:
+      enabled: true
+    info:
+      enabled: true
+    beans:
+      enabled: true
+    health:
+      enabled: true
+    metrics:
+      enabled: true
+    threaddump:
+      enabled: true
+    heapdump:
+      enabled: true
+    configprops:
+      enabled: true
+      
+
+
