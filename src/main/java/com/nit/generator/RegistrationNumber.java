@@ -2,8 +2,17 @@ package com.nit.generator;
 
 import java.util.Random;
 
+/**
+ * this class is responsible to generate vehicle Registration number
+ * @author Asif
+ *
+ */
 public class RegistrationNumber {
 
+	/**
+	 * this will generation unique registration number of vehicle 
+	 * @return string 
+	 */
 	public String generateRegistrationNumber()
 	{
 	       Random rand = new Random();  

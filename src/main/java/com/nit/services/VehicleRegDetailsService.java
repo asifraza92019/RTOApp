@@ -15,13 +15,27 @@ import com.nit.generator.RegistrationNumber;
 import com.nit.model.VehicleRegDetails;
 import com.nit.respositories.VehicleRegDetailsRepository;
 
+
+/**
+ * 
+ * @author Asif
+ *
+ */
+
 @Service 
 public class VehicleRegDetailsService {
 
+	/**
+	 *  @inject vehicleRegDetailsRepository
+	 */
 	@Autowired
 	private VehicleRegDetailsRepository vehicleRegDetailsRepository;
 	
-	
+	/**
+	 * this method is responsible to fecth VehicleRegDetails according to vehicleId  
+	 * @param vhclregId
+	 * @return VehicleRegDetails
+	 */
 	public VehicleRegDetails getVehicleRegDetailsById(Integer vhclregId)
 	{
 		 Optional<VehicleRegDetails> optional = 
@@ -35,6 +49,13 @@ public class VehicleRegDetailsService {
 		  return  new VehicleRegDetails();
 	}
 	
+	
+	
+	/**
+	 * this method is responsible to saveVehicleRegDetail into db
+	 * @param vehicleRegDetails
+	 * @return VehicleRegDetails
+	 */
 	public VehicleRegDetails saveVehicleRegDetails(VehicleRegDetails vehicleRegDetails)
 	{
 	

@@ -21,17 +21,74 @@
 
 
 
+<script>
+
+$(function() {
+	
+	    $('form[id="vehicleOwnerAddress"]').validate({
+			rules : {
+			
+				houseNo : 'required',
+				streetName : 'required',	
+				city : 'required',
+				zipCode : 'required'
+				
+			},
+			messages : {
+			
+				houseNo : 'house numnber required',
+				streetName : 'street name required',
+				city: 'choose your city',
+				zipCode: 'zipcode required'
+				
+				
+			},
+			submitHandler : function(form) {
+				form.submit();
+			}
+		});
+	});
+
+</script>
+
+
+<style> 
+     .error {
+	color: #FF0000
+    }
+    </style>
+    
+
+
+
+
 </head>
 <body>
   
-     <h1 style= "align-content: center;"> Vehicle Owner Address Details </h1>
+     <h2 style="color: green;" class="text-center">Vehicle Owner Address Details</h2>
+         <hr/>
    
-    <hr/>
+   
     
     
-    <form:form action ="" method="post" modelAttribute="">
+    <form:form action ="/address/saveowneraddress" method="post" modelAttribute="vehicleOwnerAddress" id="vehicleOwnerAddress">
+     
      
        <table align="center">
+       
+        <tr>
+        <td>
+        <input type="hidden" name="vehicleOwnerId" value="${vehicleOwnerId}"/>
+        </td>
+        </tr>
+        
+        <tr>
+         <td>
+        <input type="hidden" name="addressId" value="${vehicleOwnerAddress.addressId}"/>
+        </td>
+        </tr>
+        
+       
        <tr>
        <td>House No</td>
        <td>
@@ -69,12 +126,19 @@
        
        
        </table>
+     <br/>      
+          
+          <div style="text-align:center;">
+<input type="submit" value ="Next" class="btn btn-primary" style="width: 300px;"/>
+              </div>
     
-         <input type="submit" value ="Next"/>
-    
+         
     </form:form>
 
-
-
+  <br/>
+ <div style="text-align:center;">
+ <a href = "/address/handlevehicleowner?vehicleOwnerId=${vehicleOwnerId}" class="btn btn-primary"  style="width: 300px;"> Previous </a>
+              </div>
+  
 </body>
 </html>

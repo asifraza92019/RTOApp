@@ -13,12 +13,26 @@ import org.springframework.stereotype.Service;
 import com.nit.model.VehicleOwnerDetails;
 import com.nit.respositories.VehicleOwnerDetailsRepository;
 
+/**
+ * 
+ * @author Asif
+ * 
+ */
 @Service
 public class VehicleOwnerDetailsService {
 
+	 /**
+	  * injecting vehicle owner detail repository
+	  * @inject vehicleOwnerDetailsRepository
+	  */
 	         @Autowired
 	       private VehicleOwnerDetailsRepository vehicleOwnerDetailsRepository;
 	
+	         /**
+	          * this method will retrieve data from db according to ownerId
+	          * @param ownerId
+	          * @return VehicleOwnerDetails
+	          */
 	
      public VehicleOwnerDetails  getVehicleOwnerDetailsById(Integer ownerId)
      {
@@ -34,6 +48,11 @@ public class VehicleOwnerDetailsService {
     	 
      }
 	         
+     /**
+      * this method is responsible to saveVehicleOwnerDetails data into database
+      * @param vehicleOwnerDetails
+      * @return
+      */
 
      public  VehicleOwnerDetails  saveVehicleOwnerDetails(VehicleOwnerDetails vehicleOwnerDetails)
      {

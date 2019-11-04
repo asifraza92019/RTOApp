@@ -1,11 +1,15 @@
 package com.nit.model;
 
+
+
 /**
  * 
  * @author Asif
  *  this class is design to get all the vehicle data 
  *  from all defined classes
  */
+
+
 public class VehicleSummary {
 
 	
@@ -13,12 +17,14 @@ public class VehicleSummary {
 	  * @param vehicleDetails
 	  * this variable will reteriev all data  from VehicleDetails
 	  */
+	  
 	   private VehicleDetails vehicleDetails;
 	   
 	   /**
 		  * @param vehicleDetails
 		  * this variable will reteriev all data  from VehicleOwnerAddress
 		  */
+	  
 	   private VehicleOwnerAddress vehicleOwnerAddress;
 	   
 	   

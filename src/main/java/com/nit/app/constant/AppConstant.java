@@ -1,59 +1,72 @@
 package com.nit.app.constant;
 
 /**
- * 
+ *   this interface written to define all constants
  * @author Asif
- *  In this interface we are seperating all hard coded data
+ *
  */
+
 
 public interface AppConstant {
 
-	  /**
-	   *  @param VEHICLE_OWNER_DETAILS
-	   *  use to display vehicle owner details jsp page
-	   */
+    /**
+     *  @return vehicle_details
+     */
 	
-	public final String VEHICLE_OWNER_DETAILS= "vehicle_owner_details";
+	public static final String VEHICLE_DETAILS ="vehicle_details";
+	
 	
 	/**
-	 * @param VEHICLE_OWNER_ADDRESS
-	 *  use to display vehicle owner address jsp page 
+	 * @return vehicle_owner_address
 	 */
 	
-	public final String VEHICLE_OWNER_ADDRESS= "vehicle_owner_address";
+	public static final String VEHICLE_OWNER_ADDRESS="vehicle_owner_address";
 	
 	/**
-	 * @param VEHICLE_DETAILS
-	 *  use to display vehicle details jsp page
+	 * @return vehicle_onwer_details
 	 */
+	public static final String VEHICLE_OWNER_DETAILS= "vehicle_owner_details";
 	
-	public final String VEHICLE_DETAILS= "vehicle_details";
-	 
-	 /**
-	  * @param VEHICLE_REGISTRATION_DETAILS
-	  * use to display vehicle registration details jsp page
-	  */
-	
-	
-	public final String VEHICLE_REGISTRATION_DETAILS= "vehicle_registration_details";
 	
 	/**
-	 * @param VEHICLE_SUMMARY
-	 * use to display vehicle summary jsp page
+	 * @return vehicle_reg_details
 	 */
-	public final String VEHICLE_SUMMARY= "vehicle_summary";
+	public static final String VEHICLE_REGISTRATION_DETAILS= "vehicle_registration_details";
 	
-	 
-	public final String REDIRECT_VEHICLE_OWNER_ADDRESS="redirect:/address/vehicleowneraddress";
+	/**
+	 * @Return vehicle_summary 
+	 */
+	public static final String VEHICLE_SUMMARY= "vehicle_summary";
 	
-	public final String REDIRECT_VEHICLE_DETAIL ="redirect: /vehicledetail/loadvehicledetails";
+	/**
+	 *  @return vehicleOwnerId
+	 */
+	public static final String VEHICLE_OWNER_ID= "vehicleOwnerId";
 	
-	public final String REDIRECT_VEHICLE_OWNER_DETAILS="redirect:/vehicle/index";
-
-	public final String REDIRECT_VEHICLE_SUMMARY="redirect:/summary/handlesummary";
+	/**
+	 * @return vehicle_address_from
+	 */
+	public static final String REDIRECT_VEHICLE_OWNER_ADDRESS="redirect:/address/addressform";
 	
-	public final String REDIRECT_VEHICLE_REGISTRATION_DETAILS="redirect:/vehicleReg/final";
+	/**
+	 * this will load vehicle details
+	 * return 
+	 */
+	public static final String REDIRECT_VEHICLE_DETAILS="redirect:/vehicledetails/loadvehicledetails";
 	
-	public final String VEHICLE_OWNER_ID= "vehicleOwnerId";
+	/**
+	 *   @return index
+	 *   	 */
+	public static final String REDIRECT_VEHICLE_OWNER_DETAILS="redirect:/vehicle/index";
+	
+	/**
+	 * @return vehicle_summary
+	 */
+	public static final String REDIRECT_VEHICLE_SUMMARY= "redirect:/summary/handlesummary";
+	
+	/**
+	 * @return error
+	 */
+	public static final String ERROR_PAGE= "error";
 	
 }

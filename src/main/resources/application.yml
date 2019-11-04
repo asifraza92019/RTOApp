@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9191
   
     
 
@@ -12,7 +12,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: asifraza4101995@gmail.com
-    password: asifraza@786
+    password: Asifraza@9631
     properties:
       mail:
        smtp:
@@ -32,8 +32,9 @@ spring:
     show-sql: true
     properties:
       dialect: org.hibernate.dialect.MySQL55Dialect
-    
-      
+      hibernate:
+       format_sql: true 
+                  
 
 
 management:
@@ -61,4 +62,15 @@ management:
       enabled: true
       
 
+       
+#custom message for our application like for success msg and failure msg        
+form-app: 
+  messages: 
+    succMsg: Vechicle Registration Successfull      
+    
 
+#Configuring loging properties
+#logging:
+  #level:
+    #root: debug
+      

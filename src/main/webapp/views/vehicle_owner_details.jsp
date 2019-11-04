@@ -19,17 +19,102 @@
 	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   
 
+<script>
+  $(function() {
+	    $( "#datepicker" ).datepicker({
+	        changeMonth: true,
+	        changeYear: true
+	      });
+	     
+	    $('[data-type="ssno-number"]').keyup(function() {
+	    	  var value = $(this).val();
+	    	  value = value.replace(/\D/g, "").split(/(?:([\d]{3}))/g).filter(s => s.length > 0).join("-");
+	    	  $(this).val(value);
+	    	});
+
+	    	$('[data-type="ssno-number"]').on("change, blur", function() {
+	    	  var value = $(this).val();
+	    	  var maxLength = $(this).attr("maxLength");
+	    	  if (value.length != maxLength) {
+	    	    $(this).addClass("highlight-error");
+	    	  } else {
+	    	    $(this).removeClass("highlight-error");
+	    	  }
+	    	});
+	    
+	    
+	   
+
+	    $('form[id="vehicleOwner"]').validate({
+			rules : {
+			
+				firstName : 'required',
+				lastName : 'required',
+				gender : 'required',
+				email : {
+					required : true,
+					email : true
+				},
+				phoneNumber : 'required',
+				dateOfBirth : 'required',
+				zzn  : 'required'
+			
+				
+			},
+			messages : {
+			
+				firstName : 'please enter your first name',
+				lastName : 'please enter your last name',
+				gender : 'select your gender',
+				email : 'enter your email address',
+				phoneNumber: 'enter your mobile number',
+				dateOfBirth: 'enter your date of birth',
+				zzn : 'enter your ssno'
+				
+			},
+			submitHandler : function(form) {
+				form.submit();
+			}
+		});
+	});
+  
+  </script>
+
+ 
+  <style>
+       .error {
+	color: #FF0000
+      }
+      
+      
+      .highlight-error {
+       border-color: red;
+   }
+      </style>
+
+
+
 
 
 </head>
 <body>
     
-         <h1 style="color: green; align-content: center">Vehicle Owner Registration </h1>
+         <h2 style="color: green;" class="text-center">Vehicle Owner Registration </h2>
          <hr/>
          
-         <form:form action ="vehicle/savevehicleowner" method="post" modelAttribute="">
+         <form:form action ="/vehicle/savevehicleownerdetails" method="post" modelAttribute="vehicleOwnerDetails" id="vehicleOwner">
           
            <table align= "center">
+                
+                
+            <tr>
+            <td>
+             <input type="hidden" name="vehicleOwnerId" value="${vehicleOwnerDetails.vehicleOwnerId}"/>    
+            </td>
+            
+            </tr>
+                
+                
                <tr>
                   <td>First Name</td>
                   <td><form:input path="firstName"/></td>
@@ -54,7 +139,7 @@
                
                <tr>
                   <td>D.O.B</td>
-                  <td><form:input path="dob"/></td>
+                  <td><form:input path="dob" id="datepicker"/></td>
                </tr>
                
                <tr>
@@ -64,14 +149,20 @@
                
                <tr>
                   <td>SSNo</td>
-                  <td><form:input path="zzn"/></td>
+                  <td><form:input path="zzn" data-type="ssno-number" maxLength="11"/></td>
                </tr>
                
                
            </table>
-         <input type="submit" value ="Next"/>
+              
+              <br/>      
+          
+          <div style="text-align:center;">
+<input type="submit" value ="Next" class="btn btn-primary" style="width: 300px;"/>
+              </div>
          
          </form:form>
+         
          
      
 </body>

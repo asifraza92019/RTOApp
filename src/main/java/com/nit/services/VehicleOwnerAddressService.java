@@ -17,9 +17,19 @@ import com.nit.respositories.VehicleOwnerAddressRepository;
 @Service
 public class VehicleOwnerAddressService {
 
-	@Autowired
+	/**
+	 * injecting vehicleOwnerAddressRepository
+	 *  @inject vehicleOwnerAddressRepository
+	 */
+	
+      @Autowired
 	private VehicleOwnerAddressRepository vehicleOwnerAddressRepository;
 	
+      /**
+       * this method will retrieve the data from db according to vehicelOwnerId
+       * @param vownerAddId
+       * @return VehicleOwnerAddress
+       */
 	public VehicleOwnerAddress getVehicleOwnerAddressById(Integer vownerAddId)
 	{
 		  Optional<VehicleOwnerAddress>  optional = 
@@ -32,7 +42,11 @@ public class VehicleOwnerAddressService {
 		  return new VehicleOwnerAddress();
 	}
 	
-	
+	/**
+	 *  this method is responsible to save the data into db 
+	 * @param vehicleOwnerAddress
+	 * @return VehicleOwnerAddress
+	 */
 	
 	public VehicleOwnerAddress saveVehicleOwnerAddress(VehicleOwnerAddress vehicleOwnerAddress)
 	{

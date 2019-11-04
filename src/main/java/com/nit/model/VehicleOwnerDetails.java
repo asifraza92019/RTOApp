@@ -52,8 +52,8 @@ public class VehicleOwnerDetails {
 	   * this will store first name of the vehicle owner
 	   */
 	@Column(name= "first_name")
-	@Size(min = 2, max =20 ,message = "size must be between 2 to 20 character")
-	@Pattern(regexp = "[a-zA-Z] {2,20}")
+	//@Size(min = 2, max =20 ,message = "size must be between 2 to 20 character")
+	//@Pattern(regexp = "[a-zA-Z] {2,20}")
 	private String firstName;
 	
 	
@@ -61,8 +61,8 @@ public class VehicleOwnerDetails {
 	  * @param lastName
 	  * this variable is define to store last name of the vehicle owner
 	  */
-	@Size(min = 2, max =20 ,message = "size must be between 2 to 20 character")
-	@Pattern(regexp = "[a-zA-Z] {2,20}")
+	//@Size(min = 2, max =20 ,message = "size must be between 2 to 20 character")
+	//@Pattern(regexp = "[a-zA-Z] {2,20}")
 	@Column(name="last_name")
 	private String lastName;
 	
@@ -71,7 +71,7 @@ public class VehicleOwnerDetails {
 	 *  This variable will store gender 
 	 */
 	
-	@NotEmpty(message = "gender must not be empty")
+	//@NotEmpty(message = "gender must not be empty")
 	@Column(name="gender")
 	private String gender;
 	
@@ -80,7 +80,7 @@ public class VehicleOwnerDetails {
 	 * this will store email of vehicle owner
 	 */
 	@Column(name="email")
-	@Email(message = "enter valid email id")
+	//@Email(message = "enter valid email id")
 	private String email;
 	
 	/**
@@ -89,8 +89,10 @@ public class VehicleOwnerDetails {
 	 */
 	
 	@Column(name="dob")
-	@DateTimeFormat(pattern = "dd/MMM/yyyy")
-	private Date dob;
+	//@DateTimeFormat(pattern = "dd/MMM/yyyy")
+	//@DateTimeFormat(pattern = "dd-MM-yyyy")
+	//@Temporal(TemporalType.DATE)
+	private String dob;
 	
 	/**
 	 *  @param phoneNumber
@@ -98,8 +100,8 @@ public class VehicleOwnerDetails {
 	 */
 	
 	@Column(name="phno")
-	@Size(max = 10, min = 10 ,message = "mobile number should be of 10 digit")
-	@Pattern(regexp ="[0-9] {10}")	
+	//@Size(max = 10, min = 10 ,message = "mobile number should be of 10 digit")
+	//@Pattern(regexp ="[0-9] {10}")	
 	private String phoneNumber;
 	
 	
@@ -107,8 +109,8 @@ public class VehicleOwnerDetails {
 	    * @param zzn
 	    * this will store ssn number of vehicle owner
 	    */
-	@Size(min = 9, max = 11)
-	@NotEmpty(message = "ssn number should not exceed 9 digit")
+	//@Size(min = 9, max = 11)
+	//@NotEmpty(message = "ssn number should not exceed 9 digit")
 	@Column(name="ssn")
 	private String zzn;
 	
@@ -201,10 +203,16 @@ public class VehicleOwnerDetails {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDob() {
+	
+	
+	
+	
+	
+	
+	public String getDob() {
 		return dob;
 	}
-	public void setDob(Date dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 	public String getPhoneNumber() {
@@ -231,6 +239,8 @@ public class VehicleOwnerDetails {
 				+ lastName + ", gender=" + gender + ", email=" + email + ", dob=" + dob + ", phoneNumber=" + phoneNumber
 				+ ", zzn=" + zzn + ", createDate=" + createDate + ", updateDate=" + updateDate + "]";
 	}
+	
+	
 	
 	
 }

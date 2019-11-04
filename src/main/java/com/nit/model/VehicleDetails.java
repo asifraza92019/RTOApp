@@ -97,7 +97,7 @@ public class VehicleDetails {
 	    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 		  @JoinColumn(name="vehicle_owner_id" , 
 		  referencedColumnName ="vehicle_owner_id") 
-		      private VehicleOwnerDetails vehicleOwnerDetails;
+		 private VehicleOwnerDetails vehicleOwnerDetails;
 	    
 	    
 	public VehicleDetails() {
